@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Deal Tracker" %} - {% block sub_title %}{% endblock %}{% endblock %}
+
+{% block navigation %}
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+
+      <a class="navbar-brand" href="/">Deal Tracker</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbar-main"
+              aria-controls="navbar-main"
+              aria-expanded="false" aria-label="{% trans "Toggle navigation" %}">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar-main">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item {% if request.resolver_match.url_name == "wish_list" %}active{% endif %}">
+            <a class="nav-link" href="{% url "wish_list" %}">{% trans "Wishlist" %}</a>
+          </li>
+          <li class="nav-item {% if request.resolver_match.url_name == "wish_create" %}active{% endif %}">
+            <a class="nav-link" href="{% url "wish_create" %}">{% trans "Add" %}</a>
+          </li>
+        </ul>
+
+
+        <ul class="navbar-nav mr-1">
+          <li class="nav-item dropdown {% if request.resolver_match.url_name == "preferences" %}active{% endif %}">
+            <a id="dropdown-user" class="nav-link dropdown-toggle " href="#" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="true">
+                {{ request.user }}
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user">
+              <a class="dropdown-item" href="{% url "preferences" %}">{% trans "Preferences" %}</a>
+                {% if request.user.is_superuser %}
+                  <a class="dropdown-item" href="{% url "preferences_worker" %}">{% trans "Worker settings" %}</a>
+                {% endif %}
+
+              <a class="dropdown-item" href="{% url "logout" %}">{% trans "Logout" %}</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main role="main">
+{% endblock %}
+
+{% block footer %}
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">{% trans "Back to top" %}</a>
+      </p>
+      <p>
+          {% trans "Created by " %} <a href="https://0x41.ch">0x41.ch</a>
+      </p>
+    </div>
+  </footer>
+{% endblock %}

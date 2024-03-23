@@ -1,0 +1,13 @@
+# Use whitelisting for dotfiles
+.*
+
+# Cache
+__pycache__
+**/*/.DS_Store
+
+# Other none-production files
+docs/
+tests/
+docker-compose.yml
+Dockerfile
+README.md

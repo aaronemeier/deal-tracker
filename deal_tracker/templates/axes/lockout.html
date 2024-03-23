@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static crispy_forms_tags i18n %}
+
+{% block title %}{% trans "Locked out" %}{% endblock %}
+
+{% block content %}
+  <main>
+    <div class="container">
+      <p class="card alert-danger text-center">
+          {% trans "Authentication attempt failed " %}{{ failure_limit }} {% trans "times." %}
+          {% trans "Your IP has been blocked for " %}{{ cooloff_timedelta }}{% trans "hours." %}
+      </p>
+    </div>
+  </main>
+{% endblock %}

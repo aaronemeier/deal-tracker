@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+{% load i18n crispy_forms_tags %}
+
+{% block sub_title %}{% trans 'Delete user account' %}{% endblock %}
+
+{% block content %}
+  <main>
+    <div class="container">
+      <form method="POST">
+          {% csrf_token %}
+        <h1 class="h3 mb-3 font-weight-normal">{% trans 'Do you really want to delete your user account?' %}</h1>
+        <a class="btn btn-md btn-secondary" href="{% url "preferences" %}">{% trans "No" %}</a>
+        <button class="btn btn-md btn-danger" type="submit">{% trans "Yes" %}</button>
+      </form>
+    </div>
+  </main>
+{% endblock %}

@@ -1,0 +1,44 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+main {
+    min-height: 100%;
+    margin: 100px 0 60px;
+    padding-bottom: 50px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--footer-color);
+    padding: 0 15px;
+    line-height: 60px;
+}
+
+footer p {
+    margin-bottom: .25rem;
+}
+
+.asteriskField {
+    display: none;
+}
+
+.preferences > ul {
+    list-style-type: none;
+}
+
+.preferences > ul > li {
+    margin-top: 10px;
+}
+
+form ul {
+    padding-left: 0;
+}
+
+form li {
+   list-style-type: none;
+}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Registration closed" %}{% endblock %}
+
+{% block content %}
+  <main>
+    <div class="container">
+      <p class="card alert-danger text-center">
+          {% trans "Sorry, registration is currently disabled. " %}
+      </p>
+    </div>
+  </main>
+{% endblock %}

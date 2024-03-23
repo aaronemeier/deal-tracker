@@ -1,0 +1,108 @@
+{% extends 'home.html' %}
+{% load i18n crispy_forms_tags %}
+
+{% block sub_title %}{% trans "Wish details" %}{% endblock %}
+
+{% block content %}
+  <script type="application/javascript">
+      $('document').ready(function () {
+          const dates = [{% for date in price_log.price_log_dates %}new Date('{{ date }}'),{% endfor %}];
+          const prices = [{% for price in price_log.price_log_prices %}'{{ price }}',{% endfor %}];
+
+          const data = {
+              labels: dates,
+              datasets: [{
+                  data: prices,
+                  lineTension: 0,
+                  backgroundColor: 'transparent',
+                  borderColor: '#007bff',
+                  borderWidth: 4,
+                  pointBackgroundColor: '#007bff'
+              }]
+          };
+
+          new Chart($('#priceChart'), {
+              type: 'line',
+              data: data,
+              options: {
+                  scales: {
+                      yAxes: [{
+                          stacked: true,
+                          ticks: {
+                              beginAtZero: true
+                          },
+                      }],
+                      xAxes: [{
+                          type: 'time',
+                          time: {
+                              unit: 'month'
+                          }
+                      }]
+                  },
+                  legend: {
+                      display: false
+                  }
+              }
+          });
+
+      });
+  </script>
+  <div class="container text-center">
+    <div class="card">
+      <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+
+          <li class="nav-item">
+            <a class="nav-link active" href="#details" id="details-tab" data-toggle="tab" role="tab"
+               aria-controls="details" aria-selected="true">{% trans "Details" %}</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#chart" id="chart-tab" data-toggle="tab" role="tab" aria-controls="chart"
+               aria-selected="true">{% trans "Chart" %}</a>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="card-body tab-content">
+
+        <div class="tab-pane fade show active" id="details" role="tabpanel" aria-labelledby="details-tab">
+          <img class="card-img rounded" src="{{ info.item.image_url }}" alt="{{ info.item.name }}">
+
+          <h3 class="card-title">{{ price_log.price_latest }} {{ info.shop.currency }} - {{ info.item.name }}</h3>
+          <p class="card-text">
+              {{ info.item.description }} <a href="{{ info.item.url }}"> {% trans "source" %}...</a>
+          </p>
+            {% if info.wish.price_trigger != 0 and info.preference.enabled|default:True %}
+              <hr/>
+                {% trans "You'll get a notification if the price (minus shop discount) is below  " %}
+              <strong>{{ info.wish.price_trigger }} {{ info.shop.currency }}.</strong>
+            {% endif %}
+          <hr/>
+          <form method="POST">
+              {% csrf_token %}
+              {{ form|crispy }}
+            <button class="btn btn-md btn-primary float-right" type="submit">{% trans "Change" %}</button>
+          </form>
+        </div>
+
+        <div class="tab-pane fade" id="chart" role="tabpanel" aria-labelledby="chart-tab">
+          <p class="text-center">
+            <strong>{% trans "Mininum" %} </strong>{{ price_log.price_lowest }} {{ info.shop.currency }} /
+            <strong>{% trans "Average" %} </strong>{{ price_log.price_average }} {{ info.shop.currency }} /
+            <strong>{% trans "Maximum" %} </strong>{{ price_log.price_highest }} {{ info.shop.currency }}
+          </p>
+
+          <div class="chart-container">
+            <canvas id="priceChart"></canvas>
+          </div>
+        </div>
+        <p class="text-center">
+            {% trans "Currently there are " %} <strong>{{ price_log.stock }} </strong>{% trans "items avaiable" %}
+        </p>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

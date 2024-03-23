@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans "Activation complete" %}{% endblock %}
+
+{% block content %}
+  <main>
+    <div class="container">
+      <p class="card alert-success text-center">
+          {% trans "Activation was successful!" %}
+      </p>
+      <a class="btn btn-md btn-info" href="{% url "login" %}">{% trans "Login" %}</a>
+    </div>
+  </main>
+{% endblock %}

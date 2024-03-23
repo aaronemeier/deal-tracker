@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans "Activation failed" %}{% endblock %}
+
+{% block content %}
+  <main>
+    <div class="container">
+      <p class="card alert-danger text-center">
+          {% trans "Activation failed: " %}{{ activation_error.message }}
+      </p>
+      <a class="btn btn-md btn-info" href="{% url "login" %}">{% trans "Login" %}</a>
+      <a class="btn btn-md btn-info" href="{% url "django_registration_register" %}">{% trans "Register Again" %}</a>
+    </div>
+  </main>
+{% endblock %}

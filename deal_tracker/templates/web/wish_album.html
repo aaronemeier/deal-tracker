@@ -1,0 +1,69 @@
+{% extends 'home.html' %}
+{% load i18n custom_filters %}
+
+{% block sub_title %}{% trans "Wishlist" %}{% endblock %}
+
+{% block content %}
+    {% if object_list|length > 0 %}
+
+      <div class="album py-5 container flex-fill">
+        <div class="row">
+
+            {% for item in object_list %}
+
+              <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    {% if item.price is None %}
+                      <div class="text-center">
+                        <div class="spinner-border m-5" role="status">
+                          <span class="sr-only">{% trans "Loading" %}...</span>
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <small class="text-muted">{{ item.shop }}</small>
+                          <div class="btn-group">
+                            <a class="btn btn-sm btn-outline-primary"
+                               href="{% url "wish_list" %}">{% trans "Refresh" %}</a>
+                            <a class="btn btn-sm btn-outline-danger"
+                               href="{% url "wish_delete" item.id %}">{% trans "Delete" %}</a>
+                          </div>
+                        </div>
+                      </div>
+
+                    {% else %}
+
+                      <img src="{{ item.image_url }}" class="card-img-top card-img rounded" alt="{{ item.name }}"/>
+                      <div class="card-body">
+                        <strong>{{ item.name|truncatewords_without_dots:2 }}</strong>
+                        <p class="card-text">
+                            {{ item.description|truncatechars:80 }}
+                          <a href="{{ item.url }}">{% trans "source" %}</a>
+                        </p>
+                        <hr/>
+                          {{ item.price }} {{ item.currency }}
+                        <div class="d-flex justify-content-between align-items-center">
+                          <small class="text-muted">{{ item.shop }}</small>
+                          <div class="btn-group">
+                            <a class="btn btn-sm btn-outline-primary"
+                               href="{% url "wish_detail" item.id %}">{% trans "Details" %}</a>
+                            <a class="btn btn-sm btn-outline-danger"
+                               href="{% url "wish_delete" item.id %}">{% trans "Delete" %}</a>
+                          </div>
+                        </div>
+                      </div>
+
+                    {% endif %}
+
+                </div>
+              </div>
+
+            {% endfor %}
+        </div>
+      </div>
+    {% else %}
+      <h2 class="text-muted text-center">
+          {% trans "Nothing there yet." %}
+      </h2>
+    {% endif %}
+{% endblock %}

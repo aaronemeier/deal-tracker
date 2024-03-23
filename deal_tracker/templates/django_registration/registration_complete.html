@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Registration complete" %}{% endblock %}
+
+{% block content %}
+  <main>
+    <div class="container">
+      <p class="card alert-success text-center">
+          {% trans "An email containing account-activation information has been sent. " %}
+      </p>
+    </div>
+  </main>
+{% endblock %}

@@ -1,0 +1,29 @@
+[flake8]
+exclude =
+    # None-Source code
+    .git,
+    __pycache__,
+    # Django Migrations
+    deal_tracker/*/migrations/*
+    # Ignore Django config because of false-positives
+    deal_tracker_config
+max-complexity = 10
+max-line-length = 120
+select =
+    C,
+    E,
+    F,
+    W,
+    # DJ*: Django Style Checks
+    DJ,
+    # DJ10:  Model should define verbose_name on its Meta inner class
+    DJ10,
+    # DJ11: Model should define verbose_name_plural on its Meta inner class
+    DJ11
+ignore =
+    # E266: Too many leading '#' for block comment
+    #E266,
+    # E501: Line too long (82 > 79 characters)
+    #E501,
+    # W503: Line break occurred before a binary operator -> This is rule was superseded by W504
+    W503

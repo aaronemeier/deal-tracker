@@ -1,0 +1,7 @@
+
+Hi {{ user }},
+
+Please use the following link to activate your account in the next {{ expiration_days }} days:
+{{ scheme }}://{{ site }}/activate/{{ activation_key }}/
+
+Best regards

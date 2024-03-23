@@ -1,0 +1,588 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-13 22:16+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: deal_tracker/templates/axes/lockout.html:4
+msgid "Locked out"
+msgstr "Ausgesperrt"
+
+#: deal_tracker/templates/axes/lockout.html:10
+msgid "Authentication attempt failed "
+msgstr "Zugriffsversuch wurde blockiert"
+
+#: deal_tracker/templates/axes/lockout.html:10
+msgid "times."
+msgstr "mal."
+
+#: deal_tracker/templates/axes/lockout.html:11
+msgid "Your IP has been blocked for "
+msgstr "Deine IP wurde blockiert für "
+
+#: deal_tracker/templates/axes/lockout.html:11
+msgid "hours."
+msgstr "Stunden."
+
+#: deal_tracker/templates/django_registration/activation_complete.html:4
+msgid "Activation complete"
+msgstr "Akitivierung vollständig"
+
+#: deal_tracker/templates/django_registration/activation_complete.html:10
+msgid "Activation was successful!"
+msgstr "Aktivierung war erfolgreich!"
+
+#: deal_tracker/templates/django_registration/activation_complete.html:12
+#: deal_tracker/templates/django_registration/activation_failed.html:12
+#: deal_tracker/templates/registration/login.html:7
+#: deal_tracker/templates/registration/login.html:25
+#: deal_tracker/templates/registration/password_reset_complete.html:12
+#: deal_tracker/templates/registration/password_reset_done.html:13
+msgid "Login"
+msgstr "Anmelden"
+
+#: deal_tracker/templates/django_registration/activation_failed.html:4
+msgid "Activation failed"
+msgstr "Aktivierung fehlgeschlagen"
+
+#: deal_tracker/templates/django_registration/activation_failed.html:10
+msgid "Activation failed: "
+msgstr "Aktivierung fehlgeschlagen: "
+
+#: deal_tracker/templates/django_registration/activation_failed.html:13
+msgid "Register Again"
+msgstr "Nochmals registrieren"
+
+#: deal_tracker/templates/django_registration/registration_closed.html:4
+msgid "Registration closed"
+msgstr "Registrierung geschlossen"
+
+#: deal_tracker/templates/django_registration/registration_closed.html:10
+msgid "Sorry, registration is currently disabled. "
+msgstr "Sorry, derzeit ist keine Registierung erlaubt. "
+
+#: deal_tracker/templates/django_registration/registration_complete.html:4
+msgid "Registration complete"
+msgstr "Registrierung vollständig"
+
+#: deal_tracker/templates/django_registration/registration_complete.html:10
+msgid "An email containing account-activation information has been sent. "
+msgstr "Eine Email für die Account Aktivierung wurde versandt. "
+
+#: deal_tracker/templates/django_registration/registration_form.html:4
+#: deal_tracker/templates/django_registration/registration_form.html:10
+msgid "Registration"
+msgstr "Registrierung"
+
+#: deal_tracker/templates/django_registration/registration_form.html:13
+msgid "Send"
+msgstr "Absenden"
+
+#: deal_tracker/templates/home.html:3
+msgid "Deal Tracker"
+msgstr "Deal Tracker"
+
+#: deal_tracker/templates/home.html:14
+msgid "Toggle navigation"
+msgstr "Navigation ein/ausblenden"
+
+#: deal_tracker/templates/home.html:21
+#: deal_tracker/templates/web/wish_album.html:4
+#: deal_tracker/templates/web/wish_list.html:4
+msgid "Wishlist"
+msgstr "Wunschliste"
+
+#: deal_tracker/templates/home.html:24
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: deal_tracker/templates/home.html:36
+#: deal_tracker/templates/web/preferences_form.html:4
+#: deal_tracker/templates/web/preferences_form.html:9
+msgid "Preferences"
+msgstr "Einstellungen"
+
+#: deal_tracker/templates/home.html:38
+msgid "Worker settings"
+msgstr "Worker Konfiguration"
+
+#: deal_tracker/templates/home.html:41
+msgid "Logout"
+msgstr "Abmelden"
+
+#: deal_tracker/templates/home.html:56
+msgid "Back to top"
+msgstr "Zurück nach oben"
+
+#: deal_tracker/templates/home.html:59
+#, fuzzy
+#| msgid "Coded by "
+msgid "Created by "
+msgstr "Coded by "
+
+#: deal_tracker/templates/registration/login.html:22
+msgid "Register"
+msgstr "Registrieren"
+
+#: deal_tracker/templates/registration/login.html:31
+#: deal_tracker/templates/registration/password_reset_form.html:10
+msgid "Reset password"
+msgstr "Passwort Zurücksetzen"
+
+#: deal_tracker/templates/registration/password_change_done.html:4
+msgid "Password changed"
+msgstr "Password geändert"
+
+#: deal_tracker/templates/registration/password_change_done.html:10
+msgid "Your password was changed."
+msgstr "Dein password wurde geändert."
+
+#: deal_tracker/templates/registration/password_change_done.html:12
+msgid "Back"
+msgstr "Zurück"
+
+#: deal_tracker/templates/registration/password_change_form.html:4
+#: deal_tracker/templates/registration/password_change_form.html:10
+msgid "Password change"
+msgstr "Passwort Änderung"
+
+#: deal_tracker/templates/registration/password_change_form.html:13
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: deal_tracker/templates/registration/password_change_form.html:14
+#: deal_tracker/templates/registration/password_reset_confirm.html:15
+msgid "Change my password"
+msgstr "Mein Passwort ändern"
+
+#: deal_tracker/templates/registration/password_reset_complete.html:4
+#: deal_tracker/templates/registration/password_reset_done.html:4
+#: deal_tracker/templates/registration/password_reset_form.html:4
+msgid "Password reset"
+msgstr "Passwort Zurücksetzen"
+
+#: deal_tracker/templates/registration/password_reset_complete.html:10
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr "Dein Passwort wurde geändert. Du kannst dich nun erneut anmelden."
+
+#: deal_tracker/templates/registration/password_reset_confirm.html:4
+#: deal_tracker/templates/registration/password_reset_confirm.html:12
+msgid "Password reset confirmation"
+msgstr "Bestätigung Passwort Zurücksetzen"
+
+#: deal_tracker/templates/registration/password_reset_confirm.html:21
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+"Der Link für das Zurücksetzen des Passworts war ungültig, wahrscheinlich "
+"wurde er bereits benutzt. Bitte probiere es erneut."
+
+#: deal_tracker/templates/registration/password_reset_done.html:10
+msgid ""
+"We've emailed you instructions for setting your password, if an account "
+"exists with the email you entered. You should receive them shortly."
+msgstr ""
+"Wir haben dir Instruktionen zum Zurücksetzen des Passworts zugesandt. Falls "
+"ein Account mit der angegeben Email existiert, wirst du diese in Kürze "
+"erhalten."
+
+#: deal_tracker/templates/registration/password_reset_done.html:11
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with, and check your spam folder."
+msgstr ""
+"Falls du keine Email erhalten hast, prüfe bitte die angegebene Adresse oder "
+"den Spam Ordner."
+
+#: deal_tracker/templates/registration/password_reset_email.html:3
+#, python-format
+msgid ""
+"\n"
+"You're receiving this email because you requested a password reset for your "
+"user account at %(site_name)s.\n"
+msgstr ""
+"\n"
+"Du erhältst diese Email, da du um ein Zurücksetzen des Passworts für deinen "
+"Account bei %(site_name)s gebeten hast.\n"
+
+#: deal_tracker/templates/registration/password_reset_email.html:7
+msgid "Please go to the following page and choose a new password:"
+msgstr "Bitte gehe zur folgenden Seite und wähle ein neues Passwort:"
+
+#: deal_tracker/templates/registration/password_reset_email.html:11
+msgid "Your username, in case you've forgotten:"
+msgstr "Dein Benutzername, falls du ihn vergessen hast:"
+
+#: deal_tracker/templates/registration/password_reset_email.html:13
+msgid "Thanks for using our site!"
+msgstr "Vielen Dank das du unsere Seite nutzt!"
+
+#: deal_tracker/templates/registration/password_reset_email.html:16
+msgid ""
+"\n"
+"Best regards\n"
+msgstr ""
+
+#: deal_tracker/templates/registration/password_reset_form.html:12
+#, fuzzy
+#| msgid ""
+#| "Forgotten your password? Enter your email address below, and we'll email "
+#| "instructions for setting a new one."
+msgid ""
+"Forgot your password? Enter your email address below, and we will send you a "
+"link to reset your password."
+msgstr ""
+"Passwort vergessen? Gib deine Email Adresse ein und wir senden dir eine "
+"Email mit Instruktionen für das Setzen eines neuen Passwortes zu."
+
+#: deal_tracker/templates/registration/password_reset_form.html:17
+msgid "Reset my password"
+msgstr "Mein passwort Zurücksetzen"
+
+#: deal_tracker/templates/web/preferences_form.html:12
+msgid "Delete account"
+msgstr "Account löschen"
+
+#: deal_tracker/templates/web/preferences_form.html:13
+msgid "Change password"
+msgstr "Passwort ändern"
+
+#: deal_tracker/templates/web/preferences_form.html:14
+#: deal_tracker/templates/web/wish_form.html:13
+msgid "Save"
+msgstr "Speichern"
+
+#: deal_tracker/templates/web/user_delete_form.html:4
+msgid "Delete user account"
+msgstr "Benutzer Account löschen"
+
+#: deal_tracker/templates/web/user_delete_form.html:11
+msgid "Do you really want to delete your user account?"
+msgstr "Willst du wirklich deinen Benutzer Account löschen?"
+
+#: deal_tracker/templates/web/user_delete_form.html:12
+msgid "No"
+msgstr "Nein"
+
+#: deal_tracker/templates/web/user_delete_form.html:13
+msgid "Yes"
+msgstr "Ja"
+
+#: deal_tracker/templates/web/wish_album.html:19
+#: deal_tracker/templates/web/wish_list.html:28
+#: deal_tracker/templates/web/wish_list.html:29
+#: deal_tracker/templates/web/wish_list.html:30
+msgid "Loading"
+msgstr "Lade"
+
+#: deal_tracker/templates/web/wish_album.html:27
+msgid "Refresh"
+msgstr "Aktualisieren"
+
+#: deal_tracker/templates/web/wish_album.html:29
+#: deal_tracker/templates/web/wish_album.html:51
+msgid "Delete"
+msgstr "Löschen"
+
+#: deal_tracker/templates/web/wish_album.html:41
+#: deal_tracker/templates/web/wish_detail.html:75
+msgid "source"
+msgstr "Quelle"
+
+#: deal_tracker/templates/web/wish_album.html:49
+#: deal_tracker/templates/web/wish_detail.html:57
+msgid "Details"
+msgstr "Details"
+
+#: deal_tracker/templates/web/wish_album.html:66
+#: deal_tracker/templates/web/wish_list.html:56
+msgid "Nothing there yet."
+msgstr "Noch nichts da."
+
+#: deal_tracker/templates/web/wish_detail.html:4
+msgid "Wish details"
+msgstr "Wunsch details"
+
+#: deal_tracker/templates/web/wish_detail.html:62
+msgid "Chart"
+msgstr "Diagram"
+
+#: deal_tracker/templates/web/wish_detail.html:79
+msgid "You'll get a notification if the price (minus shop discount) is below  "
+msgstr ""
+"Du wirst eine neue Benachrichtigung erhalten, falls der Preis (abzüglich "
+"Shop Discount) unter folgendem Wert ist "
+
+#: deal_tracker/templates/web/wish_detail.html:86
+msgid "Change"
+msgstr "Ändern"
+
+#: deal_tracker/templates/web/wish_detail.html:92
+msgid "Mininum"
+msgstr "Minimum"
+
+#: deal_tracker/templates/web/wish_detail.html:93
+msgid "Average"
+msgstr "Durchschnitt"
+
+#: deal_tracker/templates/web/wish_detail.html:94
+msgid "Maximum"
+msgstr "Maximum"
+
+#: deal_tracker/templates/web/wish_detail.html:102
+msgid "Currently there are "
+msgstr "Aktuell sind "
+
+#: deal_tracker/templates/web/wish_detail.html:102
+msgid "items avaiable"
+msgstr "Artikel verfügbar"
+
+#: deal_tracker/templates/web/wish_form.html:4
+msgid "Submit wish"
+msgstr "Wunsch hinzufügen"
+
+#: deal_tracker/templates/web/wish_form.html:9
+msgid "Submit a wish"
+msgstr "Einen Wunsch hinzufügen"
+
+#: deal_tracker/templates/web/wish_form.html:10
+msgid "Use an url of one of the supported shops: "
+msgstr "Gib eine url aus den folgenden Shops ein: "
+
+#: deal_tracker/templates/web/wish_list.html:13
+msgid "Name"
+msgstr "Name"
+
+#: deal_tracker/templates/web/wish_list.html:14
+msgid "Price"
+msgstr "Preis"
+
+#: deal_tracker/templates/web/wish_list.html:15
+msgid "Description"
+msgstr "Beschreibung"
+
+#: deal_tracker/templates/web/wish_list.html:16 deal_tracker/web/models.py:42
+msgid "Shop"
+msgstr "Shop"
+
+#: deal_tracker/templates/web/worker.html:4
+#: deal_tracker/templates/web/worker.html:9
+msgid "Worker administration"
+msgstr "Worker Administration"
+
+#: deal_tracker/templates/web/worker.html:12
+msgid "Run"
+msgstr "Ausführen"
+
+#: deal_tracker/web/admin.py:7 deal_tracker/web/admin.py:8
+#, fuzzy
+#| msgid "Worker administration"
+msgid "Deal Tracker Administration"
+msgstr "Worker Administration"
+
+#: deal_tracker/web/apps.py:8
+msgid "Web"
+msgstr ""
+
+#: deal_tracker/web/forms.py:23
+msgid "Product URL"
+msgstr "Produkt URL"
+
+#: deal_tracker/web/forms.py:23
+msgid "Enter a product url as a reference for the product"
+msgstr "Gib eine Produkt url als Produktreferenz ein"
+
+#: deal_tracker/web/forms.py:26
+msgid "Price trigger"
+msgstr "Preis Trigger"
+
+#: deal_tracker/web/forms.py:29
+#, fuzzy
+#| msgid ""
+#| "Select a price trigger, on which email notifications will be sent. Use 0 "
+#| "to disable the trigger"
+msgid ""
+"Select a price trigger, on which email notifications will be sent. Use zero "
+"to disable the price trigger."
+msgstr ""
+"Wähle einen Preis Trigger, welcher eine Email Benachrichtigung auslöst. Der "
+"Wert 0 bedeutet, das der Trigger für diesen Artikel deaktiviert wird."
+
+#: deal_tracker/web/forms.py:43
+#, python-brace-format
+msgid "Specified URL is invalid. Example: {shop.example}"
+msgstr "Die gewählte URL ist ungültig. Beispiel: {shop.example}"
+
+#: deal_tracker/web/forms.py:49
+msgid "No shop support for specified url"
+msgstr "Der Shop für die gewählte URL wird nicht unterstützt"
+
+#: deal_tracker/web/forms.py:60
+msgid "Update Price trigger"
+msgstr "Ändere den Preis Trigger"
+
+#: deal_tracker/web/forms.py:68
+msgid "Language"
+msgstr "Sprache"
+
+#: deal_tracker/web/forms.py:69
+msgid "Theme"
+msgstr "Theme"
+
+#: deal_tracker/web/forms.py:70
+msgid "Enable list view "
+msgstr "Aktiviere Detailansicht"
+
+#: deal_tracker/web/forms.py:76
+#, python-brace-format
+msgid "Enable emails for {shop.name}"
+msgstr "Aktiviere Emails für {shop.name}"
+
+#: deal_tracker/web/forms.py:79
+#, python-brace-format
+msgid "Discount (in %) for {shop.name}"
+msgstr "Discount (in %) für {shop.name}"
+
+#: deal_tracker/web/forms.py:88
+msgid "Discount can't be higher than 100% "
+msgstr "Discount kann nicht grösser als 100% sein"
+
+#: deal_tracker/web/forms.py:91
+msgid "Discount can't be less than 0% "
+msgstr "Discount kann nicht kleiner als 0% sein"
+
+#: deal_tracker/web/forms.py:96
+msgid "Scrape all items"
+msgstr "Scrape alle Artikel"
+
+#: deal_tracker/web/forms.py:97
+msgid "Send all mails"
+msgstr "Sende alle mails"
+
+#: deal_tracker/web/models.py:9 deal_tracker_config/settings/base.py:31
+msgid "English"
+msgstr "Englisch"
+
+#: deal_tracker/web/models.py:9 deal_tracker_config/settings/base.py:32
+msgid "German"
+msgstr "Deutsch"
+
+#: deal_tracker/web/models.py:12
+msgid "Light"
+msgstr "Hell"
+
+#: deal_tracker/web/models.py:13
+msgid "Dark"
+msgstr "Dunkel"
+
+#: deal_tracker/web/models.py:21
+#, fuzzy
+#| msgid "Preferences"
+msgid "User Preference"
+msgstr "Einstellungen"
+
+#: deal_tracker/web/models.py:22
+#, fuzzy
+#| msgid "Preferences"
+msgid "User Preferences"
+msgstr "Einstellungen"
+
+#: deal_tracker/web/models.py:35
+msgid "Swiss francs"
+msgstr "Schweizer Franken"
+
+#: deal_tracker/web/models.py:36
+#, fuzzy
+#| msgid "US dollars"
+msgid "US Dollars"
+msgstr "Amerikanische Dollars"
+
+#: deal_tracker/web/models.py:43
+#, fuzzy
+#| msgid "Shop"
+msgid "Shops"
+msgstr "Shop"
+
+#: deal_tracker/web/models.py:59
+msgid "Item"
+msgstr ""
+
+#: deal_tracker/web/models.py:60
+msgid "Items"
+msgstr ""
+
+#: deal_tracker/web/models.py:81
+#, fuzzy
+#| msgid "Price"
+msgid "Price Log"
+msgstr "Preis"
+
+#: deal_tracker/web/models.py:82
+#, fuzzy
+#| msgid "Price"
+msgid "Price Logs"
+msgstr "Preis"
+
+#: deal_tracker/web/models.py:96
+#, fuzzy
+#| msgid "Preferences"
+msgid "Shop Preference"
+msgstr "Einstellungen"
+
+#: deal_tracker/web/models.py:97
+#, fuzzy
+#| msgid "Preferences"
+msgid "Shop Preferences"
+msgstr "Einstellungen"
+
+#: deal_tracker/web/models.py:111
+#, fuzzy
+#| msgid "Wishlist"
+msgid "Wish"
+msgstr "Wunschliste"
+
+#: deal_tracker/web/models.py:112
+#, fuzzy
+#| msgid "Wishlist"
+msgid "Wishes"
+msgstr "Wunschliste"
+
+#: deal_tracker/web/views.py:57
+#, fuzzy
+#| msgid "Wish information not found or currently refreshing"
+msgid ""
+"Wish information not found or it is currently refreshing with the latest "
+"price data"
+msgstr ""
+"Wunsch informationen wurden nicht gefunden oder werden gerade aktualisiert"
+
+#: deal_tracker/web/views.py:62
+msgid "Price update information not found"
+msgstr "Preis Informationen konnten nicht gefunden"
+
+#: deal_tracker/web/views.py:191
+msgid "Unknown action"
+msgstr "Unbekannte Aktion"
+
+#: deal_tracker/web/views.py:195
+msgid "Job submitted: Scraping all items"
+msgstr "Job abgeschickt: Scrape alle Artikel"
+
+#: deal_tracker/web/views.py:200
+msgid "Job submitted: Sending mails"
+msgstr "Job abgeschickt: Sende mails"

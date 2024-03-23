@@ -1,44 +1,27 @@
-# dealtracker
-Lightweight deal tracker
+# Deal Tracker
+**Discontinued**
 
-# TODO
-- [ ] Setup Platform
-    - [ ] Pylint -  Linter
-    - [ ] Travis - CI
-    - [ ] Pytest - Testing
-    - [ ] Heroku Hobby - Deployment
-    - [ ] Sendgrid - Send Mails
+Simple Web App to track prices of Swiss online shops and notify users when the price drops below a certain threshold.
 
-# Features
-- [ ] Scrapers
-    - [ ] Digitec
-    - [ ] Brack
-    - [ ] Techmania
-    - [ ] Amazon
-- [ ] Mail Notification
-- [ ] User Management
+## Run Development
 
-# Commands
 ```bash
-# Make new migrations
-python manage.py makemigrations app
-
-# Check migrations
-python manage.py check
-
-# Migrate
-python manage.py migrate
-
-# Shell
-python manage.py shell
-
-# Create superusrel
-python manage.py createsuperuser
+cp .env.example .env
+docker-compose up -d
 ```
 
-# Credits
-- Django
-- Bootstrap
-- JQuery
-- Popper.js
+Apply migrations and create a superuser:
 
+```bash
+docker-compose run web /bin/bash
+```
+
+```bash
+python manage.py migrate
+export DJANGO_SUPERUSER_USERNAME=admin
+export DJANGO_SUPERUSER_EMAIL=admin@example.com
+export DJANGO_SUPERUSER_PASSWORD=password
+export DJANGO_SUPERUSER_FIRST_NAME=System
+export DJANGO_SUPERUSER_LAST_NAME=Administrator
+python manage.py createsuperuser --noinput
+```

@@ -1,0 +1,60 @@
+{% extends 'home.html' %}
+{% load i18n custom_filters %}
+
+{% block sub_title %}{% trans "Wishlist" %}{% endblock %}
+
+{% block content %}
+  <div class="container table-responsive">
+      {% if object_list|length > 0 %}
+        <table class="table table-hover table-borderless">
+          <thead>
+          <tr>
+            <th></th>
+            <th>{% trans "Name" %}</th>
+            <th>{% trans "Price" %}</th>
+            <th>{% trans "Description" %}</th>
+            <th>{% trans "Shop" %}</th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for item in object_list %}
+              {% if item.price is None %}
+                <tr>
+                  <td>
+                    <a href="{% url "wish_delete" item.id %}">
+                      <i class="fas fa-trash text-danger"></i>
+                    </a>
+                  </td>
+                  <td class="text-muted">{% trans "Loading" %}..</td>
+                  <td class="text-muted">{% trans "Loading" %}..</td>
+                  <td class="text-muted">{% trans "Loading" %}..</td>
+                  <td><a href="{{ item.url }}">{{ item.shop }}</a></td>
+                </tr>
+
+              {% else %}
+                <tr>
+                  <td>
+                    <a href="{% url "wish_delete" item.id %}">
+                      <i class="fas fa-trash text-danger"></i>
+                    </a>
+                    <a href="{% url "wish_detail" item.id %}">
+                      <i class="fas fa-edit"></i>
+                    </a>
+                  </td>
+                  <td>{{ item.name|truncatewords_without_dots:3 }}</td>
+                  <td>{{ item.price }} {{ item.currency }}</td>
+                  <td>{{ item.description|truncatechars:80 }}</td>
+                  <td><a href="{{ item.url }}">{{ item.shop }}</a></td>
+                </tr>
+              {% endif %}
+
+          {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <h2 class="text-muted text-center">
+            {% trans "Nothing there yet." %}
+        </h2>
+      {% endif %}
+  </div>
+{% endblock %}

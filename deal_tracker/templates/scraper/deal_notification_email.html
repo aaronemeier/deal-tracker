@@ -1,0 +1,12 @@
+
+Hi <strong>{{ username }}</strong>,
+
+<p> The following items on your wish list are now below the price point you set: </p>
+
+<ul>
+
+  {% for deal in deals %}
+    <li>{{ deal.price }} {{ deal.currency }} - {{ deal.name }}  <a href="{{ deal.url }}">buy now</a></li>
+  {% endfor %}
+
+</ul>

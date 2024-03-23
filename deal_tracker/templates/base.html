@@ -1,0 +1,43 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
+  {% if request.dark_theme %}
+    <link rel="stylesheet" href="{% static "css/vendor/bootstrap/bootstrap.darkly.min.css" %}"/>
+    <link rel="stylesheet" href=" {% static "css/app/theme.dark.css" %}"/>
+  {% else %}
+    <link rel="stylesheet" href="{% static "css/vendor/bootstrap/bootstrap.min.css" %}"/>
+    <link rel="stylesheet" href=" {% static "css/app/theme.light.css" %}"/>
+  {% endif %}
+  <link rel="stylesheet" href="{% static "css/vendor/font-awesome/all.css" %}">
+  <link rel="stylesheet" href="{% static "css/vendor/chart/Chart.min.css" %}">
+  <link rel="stylesheet" href="{% static "css/app/main.css" %}">
+  <script src="{% static "js/vendor/chart/Chart.bundle.min.js" %}"></script>
+  <script src="{% static "js/vendor/jquery/jquery-3.4.1.min.js" %}"></script>
+  <script src="{% static "js/app/main.js" %}"></script>
+  {% block pagestyle %}{% endblock %}
+  <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+
+{% block navigation %}{% endblock %}
+
+{% if notification %}
+  <div id="notification" class="container">
+    <div class="alert alert-{{ notification.type }} text-center" role="alert">
+      {{ notification.message }}
+    </div>
+  </div>
+{% endif %}
+
+{% block content %}{% endblock %}
+{% block footer %}{% endblock %}
+<script src="{% static "js/vendor/popper/popper.min.js" %}"></script>
+<script src="{% static "js/vendor/bootstrap/bootstrap.min.js" %}"></script>
+</body>
+</html>

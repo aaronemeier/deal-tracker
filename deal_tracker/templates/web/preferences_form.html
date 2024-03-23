@@ -1,0 +1,18 @@
+{% extends 'home.html' %}
+{% load i18n crispy_forms_tags %}
+
+{% block sub_title %}{% trans "Preferences" %}{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <form method="POST">
+      <h1 class="h3 mb-3 font-weight-normal">{% trans "Preferences" %}</h1>
+        {% csrf_token %}
+        {{ form|crispy }}
+      <a href="{% url "user_delete" %}" class="btn btn-md btn-danger">{% trans "Delete account" %}</a>
+      <a href="{% url "password_change" %}" class="btn btn-md btn-info">{% trans "Change password" %}</a>
+      <button class="btn btn-md btn-primary float-right" type="submit">{% trans "Save" %}</button>
+    </form>
+  </div>
+
+{% endblock %}

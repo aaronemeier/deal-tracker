@@ -1,0 +1,185 @@
+# -----------------------------------------------------------------------------
+# Poetry
+# -----------------------------------------------------------------------------
+[tool.poetry]
+name = "deal_tracker"
+version = "1.0.0"
+description = "Web app to get the latest deals"
+authors = ["Aaron Meier <aaron@0x41.ch>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django-axes = "^6.1.1"
+django = "~4.2"
+celery = "^5.2.7"
+django-celery-beat = "^2.3.0"
+django-celery-results = "^2.4.0"
+redis = "^5.0.0"
+django-environ = "^0.11.2"
+whitenoise = {extras = ["broetli"], version = "^6.3.0"}
+psycopg2 = "^2.9.3"
+sentry-sdk = "^1.5.12"
+requests = "^2.28.2"
+django-health-check = "^3.17.0"
+django-debug-toolbar = "^4.2.0"
+django-extensions = "^3.2.1"
+flower = "^2.0.1"
+django-crispy-forms = "^2.0"
+django-registration = "^3.3"
+beautifulsoup4 = "^4.11.1"
+django-recaptcha = "^3.0.0"
+django-regex-field = "^3.0.3"
+django-ipware = "^5.0.0"
+undetected-chromedriver = "^3.1.5"
+selenium = "^4.2.0"
+uvicorn = "^0.23.2"
+crispy-bootstrap4 = "^2022.1"
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^2.14.5"
+pylint-django = "^2.5.3"
+flake8 = "^6.1.0"
+flake8-bugbear = "^23.7.10"
+flake8-django = "^1.1.5"
+autoflake = "^2.2.1"
+black = "^23.9.1"
+mypy = "^1.5.1"
+django-stubs = "^4.2.4"
+types-requests = "^2.28.8"
+pytest = "^7.1.2"
+pytest-django = "^4.5.2"
+pytest-cov = "^4.0.0"
+pytest-mock = "^3.8.2"
+pytest-factoryboy = "^2.5.0"
+requests-mock = "^1.9.3"
+django-mock-queries = "^2.1.7"
+Faker = "^19.6.1"
+model-bakery = "^1.7.0"
+factory-boy = "^3.2.1"
+pyupgrade = "^3.3.1"
+isort = "^5.12.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+# -----------------------------------------------------------------------------
+# Black
+# -----------------------------------------------------------------------------
+[tool.black]
+line-length = 120
+target-version = ['py311']
+include = '\.pyi?$'
+
+# -----------------------------------------------------------------------------
+# Pytest
+# -----------------------------------------------------------------------------
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "deal_tracker_config.settings.development"
+testpaths = ["tests"]
+python_files = ["tests.py", "test_*.py", "integration_tests.py"]
+markers = [
+    "regression: marks regression tests (deselect with: -m 'not regression')",
+    "unit: marks unit tests (deselect with: '-m not unit')",
+    "integration: marks integration tests (deselect with: '-m not integration')",
+    "no_ci: marks tests that should not be run in CI"
+]
+addopts = "--reuse-db"
+
+# -----------------------------------------------------------------------------
+# MyPy
+# -----------------------------------------------------------------------------
+[tool.mypy]
+plugins = ["mypy_django_plugin.main"]
+files = "deal_tracker"
+follow_imports = "skip"
+# Try to resolve as types/stubs if possible otherwise ignore it (Use `mypy --install-types`)
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "deal_tracker.*.migrations.*"
+ignore_errors = true
+
+[tool.django-stubs]
+django_settings_module = "deal_tracker_config.settings.development"
+
+# -----------------------------------------------------------------------------
+# Pylint
+# -----------------------------------------------------------------------------
+[tool.pylint.master]
+load-plugins = "pylint_django"
+django-settings-module = "deal_tracker_config.settings.development"
+ignore=[
+    # Django Migrations: Automatically generated migrations give a lot of errors
+    "deal_tracker/*/migrations/*",
+    # Ignore Django config because of false-positives
+    "deal_tracker_config",
+    # Tests: Lot of false-positives with PyTest Fixtures
+    "tests"
+]
+
+[tool.pylint.messages_control]
+enable = "all"
+disable = [
+    # Don't warn when we clearly want to ignore it
+    "file-ignored",
+    "locally-disabled",
+    "suppressed-message",
+    # Docstrings are usually not required
+    "missing-docstring",
+    # Dataclasses can have no methods
+    "too-few-public-methods",
+    # Useless in Django
+    "abstract-method",
+]
+
+[tool.pylint.design]
+max-attributes=12
+max-parents = 15
+
+[tool.pylint.logging]
+# Format style used to check logging format string
+# `new` (eager): logger.debug("{test}".format(test=test))
+# `fstr` (eager): logger.debug(f"{s}")
+# `old` (lazy): logger.debug("%s", s)
+logging-format-style = "old"
+
+[tool.pylint.basic]
+max-line-length = 120
+const-rgx = "(([A-Z_][A-Z0-9_]*)|(__.*__))$"
+argument-rgx = "[a-z_][a-z0-9_]{2,30}$"
+
+[tool.pylint.format]
+max-line-length = 120
+good-names = ["me", "to", "i", "j", "k", "e", "_", "pk", "x", "y"]
+
+# -----------------------------------------------------------------------------
+# Coverage
+# -----------------------------------------------------------------------------
+[tool.coverage.run]
+branch = true
+source = ["deal_tracker"]
+omit = ["*migrations*"]
+
+[tool.coverage.report]
+# Regexes for lines to exclude from consideration
+exclude_lines = [
+    # Have to re-enable the standard pragma
+    "pragma: no cover",
+    # Don't complain about missing debug-only code:
+    "def __repr__",
+    "if self\\.debug",
+    # Don't complain if tests don't hit defensive assertion code:
+    "raise AssertionError",
+    "raise NotImplementedError",
+    # Don't complain if non-runnable code isn't run:
+    "if 0:",
+    "if __name__ == .__main__.:"
+]
+ignore_errors = true
+
+[tool.coverage.html]
+directory = "htmlcov"
+
+
+

@@ -1,0 +1,9 @@
+
+Hi {{ username }},
+
+The following items on your wish list are now below the price point you set:
+
+{% for deal in deals %}
+- {{ deal.price }} {{ deal.currency }} - {{ deal.name }}
+  See: {{ deal.url }}
+{% endfor %}
